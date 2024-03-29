@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    //指定 ECMAScript 目标版本 "ES2020"（默认）， "ES5"， "ES6" / "ES2015"， "ES2016"， "ES2020" 或 "ESNext"。
+    "target": "ESNext",
+    // 构建的目标代码删除所有注释，但是不会删除以 /!* 开头的版权信息
+    "removeComments": true,
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    // 生成相应的 .d.ts文件
+    "declaration": true,
+    // 生成的 .d.ts文件路径，这里统一生成到types文件夹下
+    "declarationDir": "types",
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    // baseUrl来告诉编译器到哪里去查找模块，所有非相对模块导入都会被当做相对于 baseUrl。
+    "baseUrl": ".",
+    // 非相对模块导入的路径映射配置
+    "paths": {
+      "@/*": ["src/*"],
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  // 编译器默认排除的编译文件
+  "exclude": ["node_modules"]
+}
