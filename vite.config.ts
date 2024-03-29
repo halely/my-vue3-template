@@ -55,5 +55,16 @@ export default defineConfig((env) => {
         },
       },
     },
+    css: {
+      preprocessorOptions: {
+        // 全局引入了 scss 的文件
+        scss: {
+          additionalData: `
+          @import "@/assets/css/index.scss";
+        `,
+          javascriptEnabled: true,
+        },
+      },
+    },
   };
 });

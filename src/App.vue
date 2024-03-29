@@ -10,5 +10,8 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn';
 </template>
 
 <style>
-@import url('./assets/css/index.css');
+* {
+  padding: 0;
+  margin: 0;
+}
 </style>
