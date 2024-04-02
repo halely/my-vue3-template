@@ -10,6 +10,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn';
 </template>
 
 <style>
+@import './assets/css/nprogress.scss';
 * {
   padding: 0;
   margin: 0;

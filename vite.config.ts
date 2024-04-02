@@ -1,6 +1,5 @@
 import { defineConfig, loadEnv } from "vite";
 import { resolve } from "path";
-import vue from "@vitejs/plugin-vue";
 import presets from './presets/index';
 import proxy from "./src/api/proxy";
 // https://vitejs.dev/config/

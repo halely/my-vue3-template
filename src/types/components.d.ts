@@ -9,9 +9,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
     IClarityBankSolidAlerted: typeof import('~icons/clarity/bank-solid-alerted')['default']
-    IFluentEmoji3rdPlaceMedal: typeof import('~icons/fluent/emoji3rd-place-medal')['default']
     IMaterialSymbols16mpRounded: typeof import('~icons/material-symbols/16mp-rounded')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

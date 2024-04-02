@@ -22,9 +22,9 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,// 检查只声明、未使用的局部变量(只提示不报错)
+    "noUnusedParameters": true,// 检查未使用的函数参数(只提示不报错)
+    "noFallthroughCasesInSwitch": true,// 防止switch语句贯穿(即如果没有break语句后面不会执行)
     // baseUrl来告诉编译器到哪里去查找模块，所有非相对模块导入都会被当做相对于 baseUrl。
     "baseUrl": ".",
     // 非相对模块导入的路径映射配置
@@ -32,7 +32,7 @@
       "@/*": ["src/*"],
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts","src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue","vite.config.ts"],
   // 编译器默认排除的编译文件
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules",]
 }

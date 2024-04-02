@@ -3,7 +3,7 @@ import axios, { type AxiosInstance, type InternalAxiosRequestConfig, type AxiosR
 import { ElMessage } from 'element-plus';
 import showCodeMessage from '@/api/code';
 
-const BASE_PREFIX = '/api';
+const BASE_PREFIX = '/';
 
 // 创建实例
 const service: AxiosInstance = axios.create({
@@ -33,7 +33,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response: AxiosResponse) => {
     if (response.status === 200) {
-      return response;
+      return response.data;
     }
     ElMessage.info(JSON.stringify(response.status));
     return response;

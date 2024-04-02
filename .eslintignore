@@ -1,15 +1,7 @@
-# npm包
-/node_modules
-package-lock.json
-
-# build产物
-/dist
-/types
-
-# eslint
-.eslintcache
-
+node_modules
 .DS_Store
+dist
+dist-ssr
 *.local
 presets
 *.d.ts
