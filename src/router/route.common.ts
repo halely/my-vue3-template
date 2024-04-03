@@ -11,5 +11,13 @@ const asyncRoutes: Array<RouteRecordRaw | any> = [
     name: 'pageB',
     component: async () => await import('@/views/pageB.vue'),
   },
+  {
+    path: '/callCamera',
+    name: 'callCamera',
+    component: async () => await import('@/views/callCamera.vue'),
+    meta: {
+      title:'调用摄像机'
+    }
+  },
 ];
 export default asyncRoutes;
