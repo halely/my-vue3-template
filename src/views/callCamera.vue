@@ -73,9 +73,35 @@ const drawImage = () => {
 
   const newImgSrc = canvasDom.toDataURL("image/png");
   imgSrc.value.push(newImgSrc);
+  naImage(newImgSrc)
 }
 const closeVideo=()=>{
 	videoDom.srcObject.getTracks()[0].stop();
+}
+const naImage=(src:any)=>{
+  console.log("图片的地址",src);
+  //把这个图片转换成base64
+  let arr = src.split(",");
+    let array = arr[0].match(/:(.*?);/);
+    let mime = (array && array.length > 1 ? array[1] : 'png') || 'png';
+    // 去掉url的头，并转化为byte
+    let bytes = window.atob(arr[1]);
+    // 处理异常,将ascii码小于0的转换为大于0
+    let ab = new ArrayBuffer(bytes.length);
+    // 生成视图（直接针对内存）：8位无符号整数，长度1个字节
+    let ia = new Uint8Array(ab);
+    for (let i = 0; i < bytes.length; i++) {
+      ia[i] = bytes.charCodeAt(i);
+    }
+    const randomNumber = Math.floor(1000 + Math.random() * 9000);
+    const fileNameJPG = `图片${randomNumber}.png`;
+    let formData = new FormData();
+    formData.append(
+      "file",
+      new File([ia], fileNameJPG, { type: mime })
+    );
+    console.log(fileNameJPG)
+    console.log( new File([ia], fileNameJPG, { type: mime }))
 }
 
 </script>
