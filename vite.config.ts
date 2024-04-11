@@ -34,16 +34,8 @@ export default defineConfig((env) => {
       assetsInlineLimit: 4096, // 小于此阈值的导入或引用资源将内联为base64编码，设置为0可禁用此项。默认4096（4kb）
       cssCodeSplit: true, // 启用/禁用CSS代码拆分，如果禁用，整个项目的所有CSS将被提取到一个CSS文件中,默认true
       sourcemap: false, // 构建后是否生成 source map 文件
-      minify: "terser", // 混淆器，terser构建后文件体积更小,需要下载terser
       write: true, //设置为 false 来禁用将构建后的文件写入磁盘
       emptyOutDir: true, //默认情况下，若 outDir 在 root 目录下，则 Vite 会在构建时清空该目录。
-      terserOptions: {
-        compress: {
-          drop_console: false,
-          pure_funcs: ["console.log", "console.info"],
-          drop_debugger: true,
-        },
-      },
       assetsDir: "static/assets",
       // 静态资源打包到dist下的不同目录
       rollupOptions: {

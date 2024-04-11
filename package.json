@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "lintBuild": "npm run lint && npm run build",
+    "build": "vite build",
+    "lintBuild": "npm run lint && vue-tsc --noEmit --skipLibCheck && npm run build",
     "lint": "eslint --ext .js,.vue src",
     "preview": "vite preview",
     "prepare": "husky install"
@@ -40,7 +40,6 @@
     "eslint-plugin-vue": "^9.24.0",
     "prettier": "^3.2.5",
     "sass": "^1.72.0",
-    "terser": "^5.30.1",
     "typescript": "^5.4.3",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-icons": "^0.18.5",
