@@ -4,7 +4,7 @@ const asyncRoutes: Array<RouteRecordRaw | any> = [
   {
     path: '/',
     name: 'pageA',
-    component: async () => await import('@/views/pageA.vue'),
+    component: async () => await import('@/views/login/index.vue'),
   },
   {
     path: '/pageB',

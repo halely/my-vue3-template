@@ -11,8 +11,5 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn';
 
 <style>
 @import './assets/css/nprogress.scss';
-* {
-  padding: 0;
-  margin: 0;
-}
+@import './assets/css/reset.scss';
 </style>

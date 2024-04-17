@@ -1,4 +1,47 @@
+#app{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
 $theme-color: #2080F0FF;
 
+$namespace:'hale' !default;
+$block-sel:"-" !default;
+$element-sel:"__" !default;
+$modifier-sel:"--" !default;
 
+@mixin B($block) {
+  $B: $namespace+$block-sel+$block;
 
+  .#{$B} {
+    @content;
+  }
+}
+@mixin E($element) {
+  $selector: &; //读取父级类名
+
+  @at-root {
+    #{$selector + $element-sel + $element} {
+      @content;
+    }
+  }
+
+}
+
+@mixin M($modifier) {
+  $selector: &; //读取父级类名
+
+  @at-root {
+    #{$selector+$modifier-sel+$modifier} {
+      @content;
+    }
+  }
+}
+//自定义常用的css混入
+@mixin flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
