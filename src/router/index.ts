@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
+import { App } from 'vue';
 import { createRouter, createWebHashHistory, type Router, type RouteRecordRaw } from 'vue-router';
 import NProgress from 'nprogress';
 import exceptionRoutes from '@/router/route.exception';
@@ -31,5 +32,9 @@ router.afterEach((to, from) => {
   // console.log('全局路由后置守卫：to,from\n', to, from);
   NProgress.done();
 });
+
+export function setupRouter(app: App) {
+  app.use(router);
+}
 
 export default router;

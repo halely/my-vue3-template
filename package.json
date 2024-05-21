@@ -12,6 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@pureadmin/utils": "^2.4.7",
     "axios": "^1.6.8",
     "element-plus": "^2.6.2",
     "mockjs": "^1.1.0",

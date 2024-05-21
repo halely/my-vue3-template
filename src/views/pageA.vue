@@ -1,21 +1,21 @@
 <script lang="ts" setup>
 import theme from '@/store/module/theme';
-import publicApi from '@/api/modules';
+import {getLogin,getTableList} from '@/api/modules';
 const myTheme = theme();
 setTimeout(() => {
   myTheme.setTheme('赪紫色', '#8a1874');
 }, 2000);
 ElMessage.success('hello');
-const getLogin=async()=>{
-  let res=await publicApi.postVerification({});
+const getLoginApi=async()=>{
+  let res=await getLogin({});
   console.log(res)
 }
-const getTableList=async()=>{
-  let res=await publicApi.getTableList({});
+const getTableListApi=async()=>{
+  let res=await getTableList({});
   console.log(res)
 }
-getLogin()
-getTableList()
+getLoginApi()
+getTableListApi()
 </script>
 <template>
   <div>

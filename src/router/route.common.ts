@@ -3,7 +3,12 @@ import { type RouteRecordRaw } from 'vue-router';
 const asyncRoutes: Array<RouteRecordRaw | any> = [
   {
     path: '/',
-    name: 'pageA',
+    name: 'home',
+    component: async () => await import('@/views/layout/index.vue'),
+  },
+  {
+    path: '/login',
+    name: 'login',
     component: async () => await import('@/views/login/index.vue'),
   },
   {

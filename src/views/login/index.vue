@@ -1,6 +1,24 @@
 <script lang="ts" setup>
 import ExploreSvg from '@/assets/svg/explore.svg?component';
 import saveMoney from '@/assets/svg/saveMoney.svg?component';
+import userStore from '@/store/module/user';
+let router = useRouter();
+const user = userStore();
+const toLogin = async () => {
+  let params = {
+    account: loginInfo.account,
+    password: loginInfo.password
+  }
+  let res = await user.loginByUsername(params);
+  console.log(res)
+  // router.push({
+  //   path: "/home",
+  // })
+}
+const loginInfo = reactive({
+  account: '',
+  password: ''
+})
 </script>
 <template>
   <div class="hale-login">
@@ -13,26 +31,27 @@ import saveMoney from '@/assets/svg/saveMoney.svg?component';
         <div class="flex flex-col items-center justify-center h-screen">
           <saveMoney class="w-25 animate-bounce" />
           <div class="w-full max-w-md bg-white rounded-lg  p-6 pt-0">
-            <h2 class="text-center">haleAdmin</h2>
-            <form class="flex flex-col">
+            <h2 class="text-center uppercase my-4 text-stone-400">haleAdmin</h2>
+            <div class="flex flex-col" onsubmit="javascript: return false;">
               <input type="email"
                 class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-                placeholder="账号">
+                placeholder="账号" v-model="loginInfo.account">
               <input type="password"
                 class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-                placeholder="密码">
+                placeholder="密码" v-model="loginInfo.password">
               <div class="flex items-center justify-between flex-wrap">
                 <label for="remember-me" class="text-sm text-gray-900 cursor-pointer">
                   <input type="checkbox" id="remember-me" class="mr-2">
                   记住账号
                 </label>
-                <a href="#" class="text-sm text-blue-500 hover:underline mb-0.5">忘记密码？</a>
-                <p class="text-gray-900 mt-4 w-100"> 没有账户？<a href="#"
-                    class="text-sm text-blue-500 -200 hover:underline mt-4">注册</a></p>
+                <a class="text-sm text-blue-500 hover:underline mb-0.5">忘记密码?</a>
+                <p class="text-gray-900 mt-4 w-100"> 没有账户?<a
+                    class="text-sm text-blue-500 -200 hover:underline mt-4 ml-1">注册</a></p>
               </div>
               <button
-                class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150">登录</button>
-            </form>
+                class="bg-gradient-to-r from-indigo-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-indigo-600 hover:to-blue-600 transition ease-in-out duration-150"
+                @click="toLogin">登录</button>
+            </div>
           </div>
         </div>
 
@@ -61,14 +80,12 @@ import saveMoney from '@/assets/svg/saveMoney.svg?component';
   }
 
   @include E(img) {
-    @include flexCenter
+    @include flexCenter;
+    justify-content: flex-end;
   }
 
   @include E(form) {
     h2 {
-      text-transform: uppercase;
-      margin: 15px 0;
-      color: #999;
       font: bold 200% Consolas, Monaco, monospace;
     }
   }
