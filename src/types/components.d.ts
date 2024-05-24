@@ -7,9 +7,14 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ElAside: typeof import('element-plus/es')['ElAside']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
+    ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElFooter: typeof import('element-plus/es')['ElFooter']
+    ElHeader: typeof import('element-plus/es')['ElHeader']
     ElImage: typeof import('element-plus/es')['ElImage']
+    ElMain: typeof import('element-plus/es')['ElMain']
     HelloWorld: typeof import('./../components/HelloWorld.vue')['default']
     IClarityBankSolidAlerted: typeof import('~icons/clarity/bank-solid-alerted')['default']
     IMaterialSymbols16mpRounded: typeof import('~icons/material-symbols/16mp-rounded')['default']

@@ -36,7 +36,7 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response: AxiosResponse) => {
     if (response.status === 200) {
-      return response.data;
+      return response;
     }
     ElMessage.info(JSON.stringify(response.status));
     return response;
@@ -46,7 +46,7 @@ service.interceptors.response.use(
     // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     if (response) {
       ElMessage.error(showCodeMessage(response.status));
-      return await Promise.reject(response.data);
+      return await Promise.reject(response);
     }
     ElMessage.warning('网络连接异常,请稍后再试!');
     return await Promise.reject(error);

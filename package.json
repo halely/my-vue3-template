@@ -26,6 +26,7 @@
     "@types/mockjs": "^1.0.10",
     "@types/node": "^20.11.30",
     "@types/nprogress": "^0.2.3",
+    "@types/react": "^18.3.2",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^7.4.0",
     "@vitejs/plugin-vue": "^5.0.4",

@@ -11,9 +11,9 @@ const toLogin = async () => {
   }
   let res = await user.loginByUsername(params);
   console.log(res)
-  // router.push({
-  //   path: "/home",
-  // })
+  router.push({
+    path: "/",
+  })
 }
 const loginInfo = reactive({
   account: '',
