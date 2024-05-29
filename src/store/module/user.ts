@@ -1,14 +1,14 @@
 import {defineStore} from 'pinia';
 import { type DataInfo} from "./type";
 import { type UserResult} from "@/api/type";
-import {storageSession} from '@pureadmin/utils';
+import {storageLocal} from '@pureadmin/utils';
 import {getLogin} from '@/api/modules';
+import {setToken,sessionKey} from '@/utils/auth';
 const userStore = defineStore('app-user', {
    state: () => {
       return {
-         token: storageSession().getItem('ACCESS-TOKEN') ?? "",
-         userName:storageSession().getItem<DataInfo>('USER-iNFO')?.userName ?? "",
-         roles: storageSession().getItem<DataInfo>('USER-iNFO')?.roles ?? []
+         userName:storageLocal().getItem<DataInfo<string>>(sessionKey)?.userName ?? "",
+         roles: storageLocal().getItem<DataInfo<string>>(sessionKey)?.roles ?? []
       }
    },
    actions:{
@@ -26,6 +26,9 @@ const userStore = defineStore('app-user', {
          getLogin(loginParams)
           .then(data => {
             if (data) {
+              setToken(data.data);
+              this.SET_USERNAME(data.data.userName);
+              this.SET_ROLES(data.data.roles);
               resolve(data);
             }
           })

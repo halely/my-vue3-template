@@ -2,7 +2,7 @@
 <script lang="ts" setup></script>
 <template>
   <div class="noFontBox">
-    <div style="transform: scale(1)">
+    <div style="transform: scale(1);display: flex; justify-content: center;">
       <svg width="1123" height="837" viewBox="0 0 1123 837" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="1123" height="837" fill="black" />
         <g id="sky" filter="url(#filter0_d)">

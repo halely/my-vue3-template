@@ -22,7 +22,6 @@ const service: AxiosInstance = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    console.log('config',config)
     // TODO 在这里可以加上想要在请求发送前处理的逻辑
     // TODO 比如 loading 等
     return config;

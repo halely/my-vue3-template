@@ -1,6 +1,7 @@
 
 export type UserResult = {
   success?: boolean;
+  code: number|string;
   data: {
     /** 用户名 */
     userName: string;

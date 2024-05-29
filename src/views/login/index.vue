@@ -10,7 +10,9 @@ const toLogin = async () => {
     password: loginInfo.password
   }
   let res = await user.loginByUsername(params);
-  console.log(res)
+  if(res.code=='1001'){
+
+  }
   router.push({
     path: "/",
   })

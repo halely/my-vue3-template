@@ -16,7 +16,7 @@ export default [
           roles: ["admin"],
           accessToken: "eyJhbGciOiJIUzUxMiJ9.admin",
           refreshToken: "eyJhbGciOiJIUzUxMiJ9.adminRefresh",
-          expires: "2023/10/30 00:00:00",
+          expires: Random.now(),
         },
       };
     },
