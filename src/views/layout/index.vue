@@ -11,7 +11,7 @@
         <!-- 顶部导航栏 -->
         顶部导航栏
       </el-header>
-      <el-main>
+      <el-main >
         <!-- 主体内容区域 -->
         主体内容区域
         <router-view />

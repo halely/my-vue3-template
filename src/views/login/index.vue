@@ -13,8 +13,8 @@ const toLogin = async () => {
   if(res.code=='1001'){
 
   }
-  router.push({
-    path: "/",
+  router.replace({
+    path: "/"
   })
 }
 const loginInfo = reactive({

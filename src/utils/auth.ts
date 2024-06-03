@@ -8,7 +8,7 @@ export function setToken(data: DataInfo<Date>) {
   const { accessToken,expires} = data;
   //如果没有就默认没有
   //如果后端直接设置时间戳，将此处代码改为expires = data.expires，然后把上面的DataInfo<Date>改成DataInfo<number>即可
-  if(expires) expiresVal = new Date(expires).getTime() + 3 * 60 * 1000;//mock时间往后延迟了3分钟
+  if(expires) expiresVal = new Date(expires).getTime() + 30 * 60 * 1000;//mock时间往后延迟了3分钟
   storageLocal().setItem(TokenKey, { accessToken, expires:expiresVal });
   storageLocal().setItem(sessionKey,data)
 }

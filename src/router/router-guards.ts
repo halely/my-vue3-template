@@ -34,7 +34,7 @@ export function createRouterGuards(router: Router) {
           }
           next();
         }else{
-          next({ path: "/login" });
+          next({ path: "/login",replace:true });
         }
       }
     });
