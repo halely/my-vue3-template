@@ -24,5 +24,13 @@ const asyncRoutes: Array<RouteRecordRaw | any> = [
       title:'调用摄像机'
     }
   },
+  {
+    path: '/mqttIndex',
+    name: 'mqttIndex',
+    component: async () => await import('@/views/pages/mqtt/index.vue'),
+    meta: {
+      title:'mqtt测试'
+    }
+  },
 ];
 export default asyncRoutes;
